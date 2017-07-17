@@ -1,0 +1,21 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="com.thkoeln.jmoeller.autonomoustangobot.activities.settingsactivities.SettingsActivity$GeneralPreferenceFragment"
+        android:title="@string/pref_header_general"/>
+
+    <header
+        android:fragment="com.thkoeln.jmoeller.autonomoustangobot.activities.settingsactivities.SettingsActivity$TangoPreferenceFragment"
+        android:title="@string/pref_header_tango"/>
+
+    <header
+        android:fragment="com.thkoeln.jmoeller.autonomoustangobot.activities.settingsactivities.SettingsActivity$OctoMapPreferenceFragment"
+        android:title="@string/pref_header_octomap"/>
+
+    <header
+        android:fragment="com.thkoeln.jmoeller.autonomoustangobot.activities.settingsactivities.SettingsActivity$BotPropertiesPreferenceFragment"
+        android:title="@string/pref_header_botproperties"/>
+
+</preference-headers>

@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">AutonomousTangoBot</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_headline_exploration">Exploration</string>
+    <string name="main_button_new">New</string>
+    <string name="main_button_load">Load</string>
+    <string name="new_exploration_header">New Exploration</string>
+    <string name="load_exploration_header">Load Exploration</string>
+    <string name="settings_header">Settings</string>
+    <string name="left_arrow">left_arrow</string>
+    <string name="action_about">About</string>
+    <string name="textView_newExploration_explanation_text">Before starting the Exploration first make sure that the Bot is standing still and has enough free space around it!</string>
+    <string name="start_new_exploration_text">Start Exploration</string>
+    <string name="stop_bot_text">Stop Bot</string>
+    <string name="save_exploration_text">Save Exploration</string>
+    <string name="no_permissions">Permission not granted!</string>
+    <string name="exception_out_of_date">Tango service outdated!</string>
+    <string name="exception_tango_error">Tango exception! Try again!</string>
+    <string name="exception_tango_invalid">Tango invalid exception! Try again!</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="directory_path_textview_placeholder">/placeholderDirectoryGrandparent/placeholderDirectoryParent/placeholderDirectory</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- General settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_explorations_filepath_key">pref_explorations_filepath_key</string>
+    <string name="pref_explorations_filepath_title">Exploration Filepath</string>
+    <string name="pref_explorations_filepath_default">/AutonomousTangoBot/Explorations</string>
+    <string name="pref_working_directory_key">pref_working_directory_key</string>
+    <string name="pref_working_directory_title">Working Directory</string>
+    <string name="pref_working_directory_default">/AutonomousTangoBot/temp</string>
+    
+    <!-- Settings for Google Tango -->
+    <string name="pref_header_tango">Google Tango</string>
+    <string name="pref_tango_usedriftcorrection_key">pref_tango_usedriftcorrection_key</string>
+    <string name="pref_tango_usedriftcorrection_title">Use Drift Correction Mode</string>
+
+    <!-- Settings for Bot Properties -->
+    <string name="pref_header_botproperties">Bot Properties</string>
+    <string name="pref_botproperties_ip_key">pref_botproperties_ip_key</string>
+    <string name="pref_botproperties_ip_title">Bot IP</string>
+    <string name="pref_botproperties_ip_default">192.168.43.48</string>
+    <string name="pref_botproperties_radius_key">pref_botproperties_radius_key</string>
+    <string name="pref_botproperties_radius_title">Radius (m)</string>
+    <string name="pref_botproperties_radius_default">0.18</string>
+    <string name="pref_botproperties_height_key">pref_botproperties_height_key</string>
+    <string name="pref_botproperties_height_title">Height (m)</string>
+    <string name="pref_botproperties_height_default">0.22</string>
+    <string name="pref_botproperties_stepheight_key">pref_botproperties_stepheight_key</string>
+    <string name="pref_botproperties_stepheight_title">Step Height (m)</string>
+    <string name="pref_botproperties_stepheight_default">0.1</string>
+    <string name="pref_botproperties_camOffset_key">pref_botproperties_camOffSet_key</string>
+    <string name="pref_botproperties_camOffset_title">Camera Height (m)</string>
+    <string name="pref_botproperties_camOffset_default">0.15</string>
+    <string name="pref_botproperties_rotationspeed_key">pref_botproperties_rotationspeed_key</string>
+    <string name="pref_botproperties_rotationspeed_title">Wheelspeed Turn (°/s)</string>
+    <string name="pref_botproperties_rotationspeed_default">50</string>
+    <string name="pref_botproperties_movementspeed_key">pref_botproperties_movementspeed_key</string>
+    <string name="pref_botproperties_movementspeed_title">Wheelspeed Forward (°/s)</string>
+    <string name="pref_botproperties_movementspeed_default">100</string>
+
+    <!-- Settings for OctoMap -->
+    <string name="pref_header_octomap">OctoMap</string>
+    <string name="pref_octomap_resolution_key">octomap_resolution_preference</string>
+    <string name="pref_octomap_resolution_title">Resolution (m)</string>
+    <string name="pref_octomap_resolution_default">0.05</string>
+    <string name="pref_octomap_scanrange_key">octomap_scanrange_preference</string>
+    <string name="pref_octomap_scanrange_title">Scan Range (m)</string>
+    <string name="pref_octomap_scanrange_default">2</string>
+
+</resources>

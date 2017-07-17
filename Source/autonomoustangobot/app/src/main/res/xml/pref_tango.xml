@@ -1,0 +1,8 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:title="@string/pref_tango_usedriftcorrection_title"
+        android:key="@string/pref_tango_usedriftcorrection_key"
+        android:defaultValue="true"/>
+
+</PreferenceScreen>

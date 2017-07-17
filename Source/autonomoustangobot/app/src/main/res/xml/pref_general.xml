@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key = "@string/pref_explorations_filepath_key"
+        android:title = "@string/pref_explorations_filepath_title"
+        android:summary = "Directory where Explorations are saved"
+        android:defaultValue = "@string/pref_explorations_filepath_default"
+        android:inputType="text"/>
+
+    <EditTextPreference
+        android:key = "@string/pref_working_directory_key"
+        android:title = "@string/pref_working_directory_title"
+        android:summary = "Directory where the single exploration files temporarily are save before they get zip-archived"
+        android:defaultValue = "@string/pref_working_directory_default"
+        android:inputType="text"/>
+
+</PreferenceScreen>

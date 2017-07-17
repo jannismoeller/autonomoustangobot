@@ -1,0 +1,45 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_ip_default"
+        android:inputType="text"
+        android:key="@string/pref_botproperties_ip_key"
+        android:title="@string/pref_botproperties_ip_title"/>
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_radius_default"
+        android:inputType="numberDecimal"
+        android:key="@string/pref_botproperties_radius_key"
+        android:title="@string/pref_botproperties_radius_title"/>
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_height_default"
+        android:inputType="numberDecimal"
+        android:key="@string/pref_botproperties_height_key"
+        android:title="@string/pref_botproperties_height_title"/>
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_stepheight_default"
+        android:inputType="numberDecimal"
+        android:key="@string/pref_botproperties_stepheight_key"
+        android:title="@string/pref_botproperties_stepheight_title"/>
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_camOffset_default"
+        android:inputType="numberDecimal"
+        android:key="@string/pref_botproperties_camOffset_key"
+        android:title="@string/pref_botproperties_camOffset_title"/>
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_rotationspeed_default"
+        android:inputType="number"
+        android:key="@string/pref_botproperties_rotationspeed_key"
+        android:title="@string/pref_botproperties_rotationspeed_title"/>
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_botproperties_movementspeed_default"
+        android:inputType="number"
+        android:key="@string/pref_botproperties_movementspeed_key"
+        android:title="@string/pref_botproperties_movementspeed_title"/>
+
+</PreferenceScreen>
