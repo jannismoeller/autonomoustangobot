@@ -66,6 +66,9 @@ Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_readNative(JNI
     return reinterpret_cast<jlong>(abstractOcTree);
 }
 
+/**
+ * This method inserts a pointCloud in the Tango Format into the octree.
+ */
 JNIEXPORT void JNICALL
 Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_insertTangoPointCloud(
         JNIEnv *env,
@@ -80,11 +83,7 @@ Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_insertTangoPoi
     NavigationOcTree *ocTree = getNativeObjectPointer<NavigationOcTree>(env, instance);
 
     // Convert the float-array of coordinates to a point3d
-    jfloat *sensorOriginArray = env->GetFloatArrayElements(jASensorOrigin, 0);
-    point3d sensorOrigin((float) sensorOriginArray[0], 
-                         (float) sensorOriginArray[1], 
-                         (float) sensorOriginArray[2]);
-    env->ReleaseFloatArrayElements(jASensorOrigin, sensorOriginArray, 0);
+    point3d sensorOrigin = jFloatArrayToVector3(env, jASensorOrigin);
 
     // get a pointer to the beginning of the points-float-buffer 
     jfloat *pointsFloatBuffer = (jfloat *) env->GetDirectBufferAddress(jPointsFloatBuffer);
@@ -120,12 +119,9 @@ Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_testCollisionC
                                                                                         jfloat height,
                                                                                         jint maxDepth) {
     NavigationOcTree *ocTree = getNativeObjectPointer<NavigationOcTree>(env, instance);
+    
     // Convert the float-array of coordinates to a point3d
-    jfloat *posArray = env->GetFloatArrayElements(jAPos, 0);
-    point3d posPoint((float) posArray[0],
-                      (float) posArray[1],
-                      (float) posArray[2]);
-    env->ReleaseFloatArrayElements(jAPos, posArray, 0);
+    point3d posPoint = jFloatArrayToVector3(env, jAPos);
 
     return (jboolean)ocTree->testCollisionWithCylinder(posPoint, (float)radius, (float)height, 
                                                        (unsigned char)maxDepth);
@@ -140,18 +136,10 @@ Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_fillBox(JNIEnv
     NavigationOcTree *ocTree = getNativeObjectPointer<NavigationOcTree>(env, instance);
 
     // Convert the float-array of coordinates to a point3d
-    jfloat *fromArray = env->GetFloatArrayElements(jAFrom, 0);
-    point3d fromPoint((float) fromArray[0],
-                      (float) fromArray[1],
-                      (float) fromArray[2]);
-    env->ReleaseFloatArrayElements(jAFrom, fromArray, 0);
+    point3d fromPoint = jFloatArrayToVector3(env, jAFrom);
 
     // Convert the float-array of coordinates to a point3d
-    jfloat *toArray = env->GetFloatArrayElements(jATo, 0);
-    point3d toPoint((float) toArray[0],
-                    (float) toArray[1],
-                    (float) toArray[2]);
-    env->ReleaseFloatArrayElements(jATo, toArray, 0);
+    point3d toPoint = jFloatArrayToVector3(env, jATo);
     
     ocTree->fillBox(fromPoint, toPoint, (bool)occupied);
 }
@@ -165,18 +153,10 @@ Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_fillBoxAsMeasu
     NavigationOcTree *ocTree = getNativeObjectPointer<NavigationOcTree>(env, instance);
 
     // Convert the float-array of coordinates to a point3d
-    jfloat *fromArray = env->GetFloatArrayElements(jAFrom, 0);
-    point3d fromPoint((float) fromArray[0],
-                      (float) fromArray[1],
-                      (float) fromArray[2]);
-    env->ReleaseFloatArrayElements(jAFrom, fromArray, 0);
+    point3d fromPoint = jFloatArrayToVector3(env, jAFrom);
 
     // Convert the float-array of coordinates to a point3d
-    jfloat *toArray = env->GetFloatArrayElements(jATo, 0);
-    point3d toPoint((float) toArray[0],
-                    (float) toArray[1],
-                    (float) toArray[2]);
-    env->ReleaseFloatArrayElements(jATo, toArray, 0);
+    point3d toPoint = jFloatArrayToVector3(env, jATo);
 
     ocTree->fillBoxAsMeasurements(fromPoint, toPoint, (bool)occupied);
 }
@@ -218,11 +198,7 @@ Java_com_thkoeln_jmoeller_autonomoustangobot_octomapjni_OcTreeJNI_raySteppingUp(
     NavigationOcTree *ocTree = getNativeObjectPointer<NavigationOcTree>(env, instance);
 
     // Convert the float-array of coordinates to a point3d
-    jfloat *originArray = env->GetFloatArrayElements(jAOrigin, 0);
-    point3d origin((float) originArray[0],
-                   (float) originArray[1],
-                   (float) originArray[2]);
-    env->ReleaseFloatArrayElements(jAOrigin, originArray, 0);
+    point3d origin = jFloatArrayToVector3(env, jAOrigin);
 
     if (origin.z() + height > ocTree->getNodeSize(1) ||
         origin.z() < -ocTree->getNodeSize(1)) {

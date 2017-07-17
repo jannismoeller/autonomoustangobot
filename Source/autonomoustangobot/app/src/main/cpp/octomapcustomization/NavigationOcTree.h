@@ -87,6 +87,7 @@ namespace octomapcustomization{
         /// virtual constructor: creates a new object of same type
         NavigationOcTree* create() const {return new NavigationOcTree(resolution); }
 
+        // For compatibility with OctoVis the Type name must be "OcTree"
 //        string getTreeType() const {return "NavigationOcTree";}
         string getTreeType() const {return "OcTree";}
 
@@ -263,9 +264,6 @@ namespace octomapcustomization{
         vector<PathToCluster *> *calculatePathsToClusters(
                 const vector<NodeCluster *> *const clusterList,
                 const point3d start, const float botNodeSearchRange);
-
-        void computeDiscreteUpdate(const Pointcloud &scan, const point3d &origin, KeySet &free_cells,
-                               KeySet &occupied_cells, double maxrange);
     };
 } // end namespace
 
