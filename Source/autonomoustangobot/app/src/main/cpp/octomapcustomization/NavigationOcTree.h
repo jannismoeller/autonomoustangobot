@@ -88,8 +88,9 @@ namespace octomapcustomization{
         NavigationOcTree* create() const {return new NavigationOcTree(resolution); }
 
         // For compatibility with OctoVis the Type name must be "OcTree"
-//        string getTreeType() const {return "NavigationOcTree";}
-        string getTreeType() const {return "OcTree";}
+        // note that you can't load a file that was saved as the other after changing this
+        string getTreeType() const {return "NavigationOcTree";}
+//        string getTreeType() const {return "OcTree";}
 
         virtual void insertPointCloud(const Pointcloud& scan, const octomap::point3d& sensor_origin,
                                       double maxrange=-1., bool lazy_eval = false, bool discretize = false);
